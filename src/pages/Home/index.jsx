@@ -3,6 +3,7 @@ import Hero from '../../components/hero/Hero';
 import CategorySection from '../../components/categories/CategorySection';
 import BestSellersSection from '../../components/food/BestSellersSection';
 import DealsSection from '../../components/deals/DealsSection';
+import WhyCraveXSection from '../../components/why-us/WhyCraveXSection';
 
 export default function Home() {
   return (
@@ -23,6 +24,9 @@ export default function Home() {
 
         {/* SECTION 3: SPECIAL DEALS */}
         <DealsSection />
+
+        {/* SECTION 4: WHY CRAVEX */}
+        <WhyCraveXSection />
       </main>
     </div>
   );
