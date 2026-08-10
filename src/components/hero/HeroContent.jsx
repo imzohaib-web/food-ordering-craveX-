@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 export default function HeroContent() {
   return (
-    <div className="flex flex-col justify-center space-y-6 sm:space-y-7 z-10 text-left">
+    <div className="flex flex-col justify-center space-y-5 sm:space-y-6 lg:space-y-7 z-10 text-left">
       {/* 1. SMALL BADGE */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -22,9 +22,9 @@ export default function HeroContent() {
         initial={{ opacity: 0, y: 25 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.1 }}
-        className="space-y-1 sm:space-y-2"
+        className="space-y-1"
       >
-        <h1 className="font-heading font-black text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl tracking-tight leading-[0.98] text-white">
+        <h1 className="font-heading font-black text-4xl sm:text-5xl lg:text-5xl xl:text-6xl tracking-tight leading-[0.98] text-white">
           CRISPY.
           <br />
           JUICY.
