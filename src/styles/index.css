@@ -1,1 +1,86 @@
 @import "tailwindcss";
+
+@theme {
+  --font-heading: "Outfit", sans-serif;
+  --font-sans: "Plus Jakarta Sans", sans-serif;
+
+  --color-crave-bg: #09090c;
+  --color-crave-surface: #121218;
+  --color-crave-card: #181822;
+  --color-crave-primary: #ff6b00;
+  --color-crave-primary-hover: #ff8526;
+  --color-crave-gold: #ffaa00;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-crave-bg);
+    color: #f3f4f6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+/* Custom Utilities for Premium Glassmorphism & Micro-animations */
+@layer utilities {
+  .glass-panel {
+    background: rgba(22, 22, 30, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .glass-panel-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .glass-panel-hover:hover {
+    background: rgba(28, 28, 38, 0.85);
+    border-color: rgba(255, 107, 0, 0.3);
+    box-shadow: 0 12px 32px -8px rgba(255, 107, 0, 0.15);
+  }
+
+  .text-gradient-orange {
+    background: linear-gradient(135deg, #ff8a00 0%, #ff5500 50%, #ffaa00 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .orange-glow {
+    box-shadow: 0 0 35px -5px rgba(255, 107, 0, 0.4);
+  }
+
+  .orange-glow-sm {
+    box-shadow: 0 0 20px -3px rgba(255, 107, 0, 0.3);
+  }
+}
+
+/* Custom Floating Keyframes */
+@keyframes subtle-float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes subtle-float-delayed {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+.animate-float {
+  animation: subtle-float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: subtle-float-delayed 7s ease-in-out 1s infinite;
+}
