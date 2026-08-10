@@ -1,2 +1,53 @@
-// Placeholder for future mock deals data
-export const deals = [];
+export const deals = [
+  {
+    id: 'family-feast',
+    name: 'FAMILY FEAST',
+    subtitle: 'Everything you need for a table full of smiles.',
+    items: [
+      '🍕 2 Large Pizzas',
+      '🍗 8 Crispy Wings',
+      '🍟 Large Loaded Fries',
+      '🥤 1.5L Drink',
+    ],
+    originalPrice: 3299,
+    dealPrice: 2499,
+    badge: '30% OFF',
+    urgencyTag: '🔥 ENDS TONIGHT',
+    ctaText: 'Grab the Deal →',
+    featured: true,
+    image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1000&q=80',
+  },
+  {
+    id: 'student-crave',
+    name: 'STUDENT CRAVE',
+    subtitle: 'Big taste. Student-friendly price.',
+    items: [
+      '🍔 1 Zinger Burger',
+      '🍟 Crispy Fries',
+      '🥤 Regular Drink',
+    ],
+    dealPrice: 699,
+    originalPrice: 899,
+    badge: '20% OFF',
+    ctaText: 'Order Now',
+    featured: false,
+    image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80',
+  },
+  {
+    id: 'weekend-feast',
+    name: 'WEEKEND FEAST',
+    subtitle: 'Make your weekend delicious.',
+    items: [
+      '🍕 1 Medium Pizza',
+      '🍗 4 Chicken Wings',
+      '🍟 Regular Fries',
+      '🥤 2 Drinks',
+    ],
+    dealPrice: 1999,
+    originalPrice: 2499,
+    badge: 'SAVE Rs. 500',
+    ctaText: 'View Deal',
+    featured: false,
+    image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=80',
+  },
+];
