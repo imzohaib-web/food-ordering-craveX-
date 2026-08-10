@@ -1,5 +1,7 @@
 import Navbar from '../../components/layout/Navbar';
 import Hero from '../../components/hero/Hero';
+import CategorySection from '../../components/categories/CategorySection';
+import BestSellersSection from '../../components/food/BestSellersSection';
 
 export default function Home() {
   return (
@@ -7,9 +9,16 @@ export default function Home() {
       {/* NAVBAR */}
       <Navbar />
 
-      {/* HERO SECTION */}
+      {/* MAIN CONTENT SECTIONS */}
       <main className="flex-1">
+        {/* HERO SECTION */}
         <Hero />
+
+        {/* SECTION 1: FOOD CATEGORIES */}
+        <CategorySection />
+
+        {/* SECTION 2: BEST SELLERS */}
+        <BestSellersSection />
       </main>
     </div>
   );

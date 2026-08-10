@@ -1,2 +1,58 @@
-// Placeholder for future mock category data
-export const categories = [];
+export const categories = [
+  {
+    id: 'burgers',
+    name: 'Burgers',
+    itemCount: 12,
+    icon: '🍔',
+    image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=600&q=80',
+    slug: 'burgers',
+  },
+  {
+    id: 'pizza',
+    name: 'Pizza',
+    itemCount: 8,
+    icon: '🍕',
+    image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=600&q=80',
+    slug: 'pizza',
+  },
+  {
+    id: 'chicken',
+    name: 'Chicken',
+    itemCount: 10,
+    icon: '🍗',
+    image: 'https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=600&q=80',
+    slug: 'chicken',
+  },
+  {
+    id: 'wraps',
+    name: 'Wraps',
+    itemCount: 6,
+    icon: '🌯',
+    image: 'https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=600&q=80',
+    slug: 'wraps',
+  },
+  {
+    id: 'sides',
+    name: 'Sides',
+    itemCount: 14,
+    icon: '🍟',
+    image: 'https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=600&q=80',
+    slug: 'sides',
+  },
+  {
+    id: 'drinks',
+    name: 'Drinks',
+    itemCount: 9,
+    icon: '🥤',
+    image: 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=600&q=80',
+    slug: 'drinks',
+  },
+  {
+    id: 'desserts',
+    name: 'Desserts',
+    itemCount: 7,
+    icon: '🍨',
+    image: 'https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=600&q=80',
+    slug: 'desserts',
+  },
+];
