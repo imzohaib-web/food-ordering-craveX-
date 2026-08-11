@@ -5,6 +5,7 @@ import BestSellersSection from '../../components/food/BestSellersSection';
 import DealsSection from '../../components/deals/DealsSection';
 import WhyCraveXSection from '../../components/why-us/WhyCraveXSection';
 import TestimonialsSection from '../../components/testimonials/TestimonialsSection';
+import Footer from '../../components/layout/Footer/Footer';
 
 export default function Home() {
   return (
@@ -32,6 +33,9 @@ export default function Home() {
         {/* SECTION 5: CUSTOMER TESTIMONIALS */}
         <TestimonialsSection />
       </main>
+
+      {/* FOOTER */}
+      <Footer />
     </div>
   );
 }
