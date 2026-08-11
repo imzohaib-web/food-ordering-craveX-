@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Search, ShoppingBag, Flame, Menu as MenuIcon, X, User } from 'lucide-react';
+import { useCart } from '../../hooks/useCart';
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const location = useLocation();
+  const { totalItemsCount } = useCart();
 
   const navLinks = [
     { name: 'Home', path: '/' },
@@ -77,7 +79,7 @@ export default function Navbar() {
             >
               <ShoppingBag className="w-5 h-5 group-hover:scale-110 transition-transform" />
               <span className="absolute -top-1 -right-1 w-5 h-5 bg-gradient-to-r from-orange-500 to-amber-500 text-white font-bold text-[11px] rounded-full flex items-center justify-center shadow-md shadow-orange-500/40">
-                2
+                {totalItemsCount}
               </span>
             </Link>
 
@@ -99,7 +101,7 @@ export default function Navbar() {
             >
               <ShoppingBag className="w-5 h-5" />
               <span className="absolute -top-1 -right-1 w-4 h-4 bg-orange-500 text-white font-bold text-[10px] rounded-full flex items-center justify-center">
-                2
+                {totalItemsCount}
               </span>
             </Link>
 
