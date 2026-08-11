@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { ArrowRight, ArrowLeft, ShieldCheck, Truck } from 'lucide-react';
 import { useCart } from '../../hooks/useCart';
 import PromoCode from './PromoCode';

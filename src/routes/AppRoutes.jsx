@@ -24,6 +24,7 @@ export default function AppRoutes() {
       <Route path="/cart" element={<Cart />} />
       <Route path="/checkout" element={<Checkout />} />
       <Route path="/order-confirmation" element={<OrderConfirmation />} />
+      <Route path="/order-confirmation/:orderId" element={<OrderConfirmation />} />
       <Route path="/track-order" element={<TrackOrder />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
