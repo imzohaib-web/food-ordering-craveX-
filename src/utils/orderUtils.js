@@ -29,7 +29,7 @@ export function createOrderObject({
   return {
     orderId,
     createdAt: new Date().toISOString(),
-    status: 'Confirmed',
+    status: 'received',
     estimatedDelivery: deliveryMethod === 'express' ? '20-30 mins' : '30-45 mins',
     customer: {
       fullName: formData.fullName,
@@ -79,5 +79,67 @@ export function saveOrderToStorage(order) {
     localStorage.setItem('cravex_latest_order', JSON.stringify(order));
   } catch (err) {
     console.error('Failed to save order to localStorage:', err);
+  }
+}
+
+/**
+ * Retrieves order by Order ID from localStorage
+ */
+export function getOrderById(orderId) {
+  if (!orderId) return null;
+
+  try {
+    const latestRaw = localStorage.getItem('cravex_latest_order');
+    if (latestRaw) {
+      const latest = JSON.parse(latestRaw);
+      if (latest && latest.orderId === orderId) {
+        return latest;
+      }
+    }
+
+    const existing = localStorage.getItem('cravex_orders');
+    if (!existing) return null;
+
+    const ordersList = JSON.parse(existing);
+    return ordersList.find((o) => o.orderId === orderId) || null;
+  } catch (err) {
+    console.error('Failed to read order from localStorage:', err);
+    return null;
+  }
+}
+
+/**
+ * Updates order status in localStorage for demo simulation
+ */
+export function updateOrderStatus(orderId, newStatus) {
+  try {
+    const existing = localStorage.getItem('cravex_orders');
+    if (!existing) return null;
+
+    const ordersList = JSON.parse(existing);
+    const updatedList = ordersList.map((o) => {
+      if (o.orderId === orderId) {
+        return { ...o, status: newStatus };
+      }
+      return o;
+    });
+
+    localStorage.setItem('cravex_orders', JSON.stringify(updatedList));
+
+    const latestRaw = localStorage.getItem('cravex_latest_order');
+    if (latestRaw) {
+      const latest = JSON.parse(latestRaw);
+      if (latest && latest.orderId === orderId) {
+        localStorage.setItem(
+          'cravex_latest_order',
+          JSON.stringify({ ...latest, status: newStatus })
+        );
+      }
+    }
+
+    return getOrderById(orderId);
+  } catch (err) {
+    console.error('Failed to update order status:', err);
+    return null;
   }
 }

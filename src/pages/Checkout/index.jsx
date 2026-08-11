@@ -82,9 +82,8 @@ export default function Checkout() {
       });
 
       saveOrderToStorage(orderPayload);
+      navigate(`/order-confirmation/${orderPayload.orderId}`, { replace: true });
       clearCart();
-      setIsSubmitting(false);
-      navigate(`/order-confirmation/${orderPayload.orderId}`);
     }, 1200);
   };
 

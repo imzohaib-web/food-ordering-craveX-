@@ -26,6 +26,7 @@ export default function AppRoutes() {
       <Route path="/order-confirmation" element={<OrderConfirmation />} />
       <Route path="/order-confirmation/:orderId" element={<OrderConfirmation />} />
       <Route path="/track-order" element={<TrackOrder />} />
+      <Route path="/track-order/:orderId" element={<TrackOrder />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="/profile" element={<Profile />} />
