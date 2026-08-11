@@ -1,2 +1,35 @@
-// Placeholder for future mock reviews data
-export const reviews = [];
+export const reviews = [
+  {
+    id: 'review-1',
+    name: 'Ahmed Khan',
+    location: 'Islamabad',
+    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80',
+    rating: 5,
+    text: 'That Zinger Supreme is seriously addictive. Crispy, juicy and still hot when it arrived.',
+    orderedItem: 'Zinger Supreme',
+    verified: true,
+    featured: false,
+  },
+  {
+    id: 'review-2',
+    name: 'Ayesha Malik',
+    location: 'Rawalpindi',
+    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80',
+    rating: 5,
+    text: 'CraveX has become my go-to whenever I\'m craving burgers or pizza. The food quality is consistently amazing and delivery is surprisingly fast.',
+    orderedItem: 'Family Feast',
+    verified: true,
+    featured: true,
+  },
+  {
+    id: 'review-3',
+    name: 'Hamza Ali',
+    location: 'Wah Cantt',
+    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80',
+    rating: 5,
+    text: 'The loaded fries and chicken wings were incredible. Everything arrived fresh and packed really well.',
+    orderedItem: 'Loaded Cheese Fries',
+    verified: true,
+    featured: false,
+  },
+];
