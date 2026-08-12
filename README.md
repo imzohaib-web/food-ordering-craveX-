@@ -4,6 +4,7 @@ CraveX is a premium food ordering website built with React and Vite. It presents
 
 ![Uploading Screenshot 2026-08-12 121128.png…]()
 
+
 ## Features
 
 - Modern responsive landing page for a fast-food brand experience
