@@ -2,6 +2,8 @@
 
 CraveX is a premium food ordering website built with React and Vite. It presents a polished restaurant storefront with menu browsing, product customization, cart management, checkout, offers, favorites, order confirmation, and order tracking flows.
 
+![Uploading Screenshot 2026-08-12 121128.png…]()
+
 ## Features
 
 - Modern responsive landing page for a fast-food brand experience
@@ -77,27 +79,4 @@ npm run preview
 npm run lint
 ```
 
-## Available Routes
 
-- `/` - Home
-- `/menu` - Menu listing
-- `/product/:id` - Product details and customization
-- `/offers` and `/deals` - Offers page
-- `/cart` - Cart
-- `/checkout` - Checkout
-- `/order-confirmation` and `/order-confirmation/:orderId` - Order confirmation
-- `/track-order` and `/track-order/:orderId` - Order tracking
-- `/favorites` - Saved items
-- `/profile` - User profile
-- `/orders` - Order history
-- `/about` - Brand story
-- `/contact` - Contact page
-- `/signin`, `/login`, `/signup`, `/register` - Auth screens
-
-## Deployment
-
-This app is a static Vite build. After running `npm run build`, deploy the generated `dist/` folder to any static hosting service such as Netlify, Vercel, GitHub Pages, or Firebase Hosting.
-
-## Notes
-
-CraveX currently uses local demo data from the `src/data` directory. To connect it to a real restaurant backend, replace the static data sources with API calls and persist cart, checkout, auth, and order state through your preferred backend service.
