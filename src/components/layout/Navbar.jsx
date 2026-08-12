@@ -12,14 +12,23 @@ export default function Navbar() {
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'Menu', path: '/menu' },
-    { name: 'Categories', path: '/#categories' },
-    { name: 'Offers', path: '/deals' },
+    { name: 'Categories', path: '/menu#categories' },
+    { name: 'Offers', path: '/offers' },
     { name: 'About Us', path: '/about' },
-    { name: 'Contact', path: '/#contact' },
+    { name: 'Contact', path: '/contact' },
   ];
 
+  const checkIsActive = (linkPath) => {
+    if (linkPath === '/') return location.pathname === '/';
+    if (linkPath === '/offers') return location.pathname === '/offers' || location.pathname === '/deals';
+    if (linkPath === '/contact') return location.pathname === '/contact';
+    if (linkPath === '/about') return location.pathname === '/about';
+    if (linkPath === '/menu') return location.pathname === '/menu';
+    return location.pathname === linkPath;
+  };
+
   return (
-    <header className="sticky top-0 z-50 w-full bg-[#09090C]/85 backdrop-blur-xl border-b border-white/10 transition-all duration-300">
+    <header className="sticky top-0 z-50 w-full bg-[#09090C]/85 backdrop-blur-xl border-b border-white/10 transition-all duration-300 select-none">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           
@@ -37,7 +46,7 @@ export default function Navbar() {
           {/* CENTER: Desktop Navigation Links */}
           <nav className="hidden md:flex items-center gap-1 lg:gap-2">
             {navLinks.map((link) => {
-              const isActive = location.pathname === link.path || (link.path === '/' && location.pathname === '/');
+              const isActive = checkIsActive(link.path);
               return (
                 <Link
                   key={link.name}
@@ -85,8 +94,12 @@ export default function Navbar() {
 
             {/* Sign In Button */}
             <Link
-              to="/login"
-              className="flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold text-white bg-white/10 border border-white/15 hover:bg-orange-500 hover:border-orange-500 hover:shadow-lg hover:shadow-orange-500/25 transition-all duration-300 cursor-pointer"
+              to="/signin"
+              className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 cursor-pointer ${
+                location.pathname === '/signin' || location.pathname === '/login'
+                  ? 'bg-orange-500 text-white shadow-lg shadow-orange-500/30'
+                  : 'text-white bg-white/10 border border-white/15 hover:bg-orange-500 hover:border-orange-500 hover:shadow-lg hover:shadow-orange-500/25'
+              }`}
             >
               <User className="w-4 h-4" />
               <span>Sign In</span>
@@ -135,7 +148,7 @@ export default function Navbar() {
           {/* Mobile Nav Links */}
           <div className="flex flex-col space-y-1">
             {navLinks.map((link) => {
-              const isActive = location.pathname === link.path;
+              const isActive = checkIsActive(link.path);
               return (
                 <Link
                   key={link.name}
@@ -155,7 +168,7 @@ export default function Navbar() {
 
           {/* Mobile Sign In */}
           <Link
-            to="/login"
+            to="/signin"
             onClick={() => setIsMobileMenuOpen(false)}
             className="flex items-center justify-center gap-2 w-full py-3 rounded-xl text-center font-semibold text-white bg-gradient-to-r from-orange-500 to-amber-600 shadow-lg shadow-orange-500/25 cursor-pointer"
           >
